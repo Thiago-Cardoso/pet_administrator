@@ -9,6 +9,9 @@ class Client < ApplicationRecord
     message: 'You need use a valid and unique email'
   }
 
+  has_many :campaign_clients
+  has_many :campaigns, through: :campaign_clients, dependent: :destroy
+
 
   def fae_display_field
     name
